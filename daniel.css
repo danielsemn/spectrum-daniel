@@ -1,0 +1,685 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: flex-start; /* Mudei de center para flex-start */
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #ffcdd2 0%, #fff9c4 33%, #c8e6c9 66%, #bbdefb 100%);
+    
+    /* ADICIONE ESSA LINHA ABAIXO */
+    padding-top: 100px; /* Ajuste esse valor se o cabeçalho for maior ou menor */
+}
+
+.container {
+    width: 90%; /* Largura ideal para dispositivos móveis */
+    max-width: 400px; /* Limite a largura em telas maiores */
+    background-color: #ffffff;
+    padding: 30px 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    border-radius: 10px;
+}
+
+/* Estilos da Logo e Nome do App */
+.logo-area {
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 80px; /* Ajuste o tamanho da sua logo */
+    height: auto;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 5px 0 2px 0;
+}
+
+.logo-area p {
+    font-size: 0.9em;
+    color: #666;
+    /* Remove toda a margem para ficar colado no H1 */
+    margin: 0;
+}
+
+/* Estilos dos Campos de Entrada */
+.input-group {
+    margin-bottom: 15px;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Cantos arredondados como na imagem */
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    font-size: 1em;
+}
+
+/* Estilos do Checkbox de Termos */
+.terms-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-size: 0.9em;
+}
+
+.terms-checkbox label {
+    margin-left: 5px;
+}
+
+/* Estilos do Botão Principal */
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    background-color: #1a73e8; /* Exemplo de um azul vibrante */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Cantos arredondados */
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0b5fb6;
+}
+
+/* Estilo do link de Login */
+.login-prompt {
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+.login-prompt a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+/* --- Estilo do Botão de Tema --- */
+.theme-btn {
+    position: absolute; /* Permite posicionar livremente */
+    top: 20px;          /* Distância do topo */
+    right: 20px;        /* Distância da direita */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    color: #333; /* Cor do ícone no modo claro */
+}
+
+.theme-btn:hover {
+    background-color: rgba(0,0,0,0.1); /* Efeito hover sutil */
+}
+
+.main-content {
+    max-width: 1200px; /* Largura máxima do conteúdo central */
+    margin: 0 auto;    /* Centraliza o bloco no meio da tela */
+    padding: 40px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- Cabeçalho Desktop --- */
+.site-header {
+    background-color: white;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.15);
+    padding: 15px 0;
+    width: 100%;
+    position: fixed;
+    top: 0; /* Posiciona no topo da tela */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Separa Logo (Esq) e Menu (Dir) */
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* --- Ajuste Fino do Cabeçalho da Home --- */
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Se quiser alinhar o texto à esquerda junto com a logo: */
+    align-items: flex-start; 
+}
+
+.header-text h1 {
+    font-size: 1.5rem; /* Tamanho do SPECTRUM */
+    color: #333;
+    font-weight: 550; /* Deixa bem negrito */
+    
+    /* O Segredo está aqui: */
+    margin: 0;           /* Remove margens externas */
+    line-height: 1;      /* Remove o espaço extra acima e abaixo das letras */
+    margin-bottom: -2px; /* Puxa o texto de baixo um pouquinho pra cima */
+}
+
+.header-text p {
+    font-size: 0.85rem; /* Tamanho do Connect & Thrive */
+    color: #666;
+    font-weight: 500;
+    
+    /* Garante que não tenha espaço empurrando para baixo */
+    margin: 0; 
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-logo {
+    width: 45px;
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #1a73e8; /* Azul destaque */
+}
+
+/* Botão de tema dentro do menu */
+.nav-theme-btn {
+    background: none;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Seção de Boas-Vindas --- */
+.welcome-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.welcome-section h2 {
+    font-size: 2.5em; /* Maior para desktop */
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* --- Grid de Cartões (Lado a Lado) --- */
+.cards-grid {
+    display: grid;
+    /* Cria 3 colunas de tamanho igual. Se a tela for pequena, ajusta automatico */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column; /* Ícone em cima, texto embaixo */
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 250px; /* Altura mínima para ficarem iguais */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Sobe um pouco ao passar o mouse */
+}
+
+.card h3 {
+    font-size: 1.5em;
+    margin: 15px 0 10px 0;
+}
+
+.card p {
+    font-size: 1em;
+    opacity: 0.95;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.card-btn {
+    background-color: rgba(255,255,255,0.2); /* Botão translúcido */
+    border: 1px solid rgba(255,255,255,0.5);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.card-btn:hover {
+    background-color: white;
+    color: #333;
+}
+
+/* Cores dos Cartões (Mantendo a identidade) */
+.card-medicos { background-color: #26a69a; }      /* Verde */
+.card-atividades { background-color: #eca945; }   /* Laranja */
+.card-comunidades { background-color: #42a5f5; }  /* Azul */
+
+/* --- Ajustes do Dark Mode para o novo layout --- */
+body.dark-mode .site-header {
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+}
+
+body.dark-mode .nav-link {
+    color: #ccc;
+}
+body.dark-mode .nav-link:hover {
+    color: #fff;
+}
+body.dark-mode .welcome-section h2 {
+    color: #fff;
+}
+body.dark-mode .subtitle {
+    color: #aaa;
+}
+
+body.dark-mode {
+    /* Fundo escuro suave (não preto total, para conforto visual) */
+    background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
+    color: #f0f0f0;
+}
+
+/* Ajuste da caixa branca para cinza escuro */
+body.dark-mode .container {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajuste dos inputs no modo escuro */
+body.dark-mode input {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #fff;
+}
+
+/* Ajuste do botão de tema no modo escuro */
+body.dark-mode .theme-btn {
+    color: #fff;
+}
+
+body.dark-mode .theme-btn:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/*coisas*/
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.filtro-agenda {
+    /* Garante que a mensagem e a lista fiquem lado a lado */
+    display: flex;
+    align-items: center;
+    
+    /* Centraliza o bloco e alinha o conteúdo para ocupar a largura máxima */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    
+    /* Distribui o espaço entre a mensagem e os filtros */
+    justify-content: space-between;
+    
+    /* Estilo visual da barra */
+    background-color: #ffffff; /* Fundo cinza bem claro */
+    border-bottom: 1px solid #e9ecef;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    border-radius: 20px;
+}
+
+/* 2. ESTILO DA MENSAGEM */
+.filtro-mensagem {
+    font-size: 1rem;
+    color: #495057;
+    font-weight: 500;
+    /* Adiciona um espaço extra à direita da mensagem */
+    margin-right: 20px; 
+}
+
+/* ==================================================
+   3. LISTA DE FILTROS: .uno
+   ================================================== */
+.uno {
+    display: flex;
+    list-style-type: none; /* Remove os pontos/marcadores */
+    gap: 10px; /* Espaço entre os itens */
+    margin: 0;
+    padding: 0;
+}
+
+/* ==================================================
+   4. ITENS INDIVIDUAIS: .uno li
+   ================================================== */
+.uno li {
+    /* Visual de card/botão */
+    background-color: #ffffff;
+    color: #1a73e8; /* Cor principal do texto */
+    font-size: 0.9rem;
+    font-weight: 600;
+    
+    padding: 8px 15px; 
+    border-radius: 20px; /* Cantos arredondados para visual de botão/chip */
+    border: 1px solid #b3cde3; /* Borda sutil */
+    
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    /* Sombra interna sutil para um efeito de profundidade leve */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); 
+}
+
+/* Efeito ao passar o mouse */
+.uno li:hover {
+    background-color: #e6f0ff; /* Fundo azul claro no hover */
+    border-color: #1a73e8; /* Borda azul no hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve no hover */
+}
+
+/*
+
+OS CARDS DOS MÉDICOS
+
+*/
+
+.medicos {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 20px;
+    height: auto; 
+    padding: 20px;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; 
+    gap: 20px; 
+    width: 90vh;  /* Nota: 'vh' para largura pode ser estranho; considere 'vw' ou 'px' para melhor responsividade, ex.: width: 90vw; ou width: 800px; */
+    margin: 10px auto; 
+    
+
+}
+
+.fotinha {
+    height: 120px; 
+    width: 120px; 
+    flex-shrink: 0; /* Impede que a foto diminua */
+    overflow: hidden;
+    border-radius: 50%; 
+}
+
+.fotinha img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.coluna {
+    flex-grow: 1;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    margin: 0; 
+    padding: 0;  
+    height: 100%; 
+    text-align: left;
+}
+
+.detalhes-texto {
+    margin-bottom: auto;
+    text-align: left;
+    width: 15vh;
+}
+
+.nome {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #1a73e8; 
+    margin-bottom: 5px;
+    width: 20vh;
+}
+
+.especialidade, .crfa, .crefito, .crp, .convenio, .crm, .localiza, .contato-detalhes {
+    width: 20vh;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 3px; 
+}
+
+.avalia {
+    color: rgb(255, 217, 50);
+    margin-bottom: 3px; 
+}
+
+.agendar {
+    align-self: flex-start; 
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.agendar:hover {
+    background-color: #0b5fb6;
+}
+
+.info-medica {
+    margin-right: 10vh;
+    margin-left: 10vh; 
+    text-align: left; /* Alinhamento à esquerda */
+    width: 40vh;
+    display: flex;
+    flex-direction: column; /* Para empilhar texto verticalmente */
+    font-size: 1.2rem;
+    color: #535353;
+    margin-bottom: 3px; 
+    margin-top: 3vh;
+    text-align: justify;
+}
+body.dark-mode .filtro-agenda {
+    background-color: #1e1e1e; /* Fundo escuro */
+    border-bottom: 1px solid #333;
+}
+
+body.dark-mode .filtro-mensagem {
+    color: #e0e0e0; /* Texto claro */
+}
+
+/* Ajusta os botões de filtro (chips) */
+body.dark-mode .uno li {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #8ab4f8; /* Azul mais claro para leitura em fundo escuro */
+}
+
+body.dark-mode .uno li:hover {
+    background-color: #333;
+    border-color: #8ab4f8;
+}
+
+/* Ajusta o Card do Médico */
+body.dark-mode .medicos {
+    background-color: #1e1e1e; /* Fundo do card escuro */
+    border-color: #333;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* Ajusta os textos dentro do card do médico */
+body.dark-mode .nome {
+    color: #8ab4f8; /* Azul claro */
+}
+
+body.dark-mode .especialidade, 
+body.dark-mode .crm, 
+body.dark-mode .localiza {
+    color: #b0b0b0; /* Cinza claro */
+}
+
+body.dark-mode .info-medica {
+    color: #d1d1d1; /* Texto descritivo quase branco */
+}
+
+
+
+
+
+/* --- ESTILOS GERAIS PARA O DROPDOWN --- */
+/* Apenas para garantir que o elemento pai possa posicionar o dropdown */
+.dropdown-toggle {
+    position: relative; /* Permite que o .dropdown-menu seja posicionado em relação a ele */
+    cursor: pointer;
+    user-select: none; /* Impede seleção de texto */
+    /* Garante o estilo original do filtro para o item 'Especialidade' / 'Localização' */
+    background-color: #ffffff;
+    color: #1a73e8;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #b3cde3;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex; /* Para centralizar o texto dentro do li pai */
+    align-items: center;
+}
+
+/* O PRÓPRIO MENU SUSPENSO */
+.dropdown-menu {
+    /* Esconde o menu por padrão */
+    display: none; 
+    
+    position: absolute;
+    top: 100%; /* Pula para baixo do botão pai */
+    left: 0;
+    
+    /* Estilo da caixa */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10; /* Garante que fique em cima de outros elementos */
+    padding: 5px 0;
+    margin-top: 5px; /* Pequeno espaçamento do botão */
+    min-width: 180px;
+    border-radius: 8px;
+    list-style: none;
+    flex-direction: column; /* Coloca os itens da lista verticalmente */
+}
+
+/* Estilo para mostrar o menu quando a classe 'open' é aplicada */
+.dropdown-toggle.open .dropdown-menu {
+    display: flex; /* Mostra a lista verticalmente */
+}
+
+/* ITENS DENTRO DO DROPDOWN */
+.dropdown-menu li.filtro-btn {
+    /* Estilo de item de menu */
+    padding: 8px 15px;
+    border: none;
+    border-radius: 0;
+    background: none;
+    color: #333;
+    font-weight: 400;
+    transition: background-color 0.2s;
+    font-size: 0.9rem;
+}
+
+.dropdown-menu li.filtro-btn:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* --- DARK MODE PARA DROPDOWN --- */
+body.dark-mode .dropdown-menu {
+    background-color: #2d2d2d;
+    border-color: #444;
+}
+
+body.dark-mode .dropdown-menu li.filtro-btn {
+    color: #e0e0e0;
+}
+
+body.dark-mode .dropdown-menu li.filtro-btn:hover {
+    background-color: #3e3e3e;
+}
+
+/* --- NOVO ESTILO PARA BOTÃO FECHAR (X) --- */
+.fechar-contato {
+    /* Torna o fundo e borda transparentes */
+    background: transparent; 
+    border: none; 
+    
+    /* Estilo do "X" */
+    font-size: 1rem;
+    font-weight: bold;
+    color: #cc0000; /* Cor vermelha discreta */
+    cursor: pointer;
+    
+    /* Posição e Click Area */
+    padding: 5px; /* Aumenta a área clicável sem aumentar o 'X' visualmente */
+    width: auto; /* Permite que o conteúdo defina a largura */
+ margin-bottom: 4.5vh;
+ margin-left: 3vh;
+    line-height: 1; 
+    align-self: flex-end; /* Mantém alinhado no canto direito */
+}
+
+.fechar-contato:hover {
+    color: #ff0000; /* Fica mais vermelho ao passar o mouse */
+}
+
+/* Ajuste Dark Mode */
+body.dark-mode .fechar-contato {
+    color: #ff5555;
+    background: transparent;
+}
+
+.contato-detalhes {
+    width: 15vh;
+    font-size: 0.9rem;
+    color: #666;
+}

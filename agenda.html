@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectrum - Agenda </title>
+    <link rel="stylesheet" href="daniel.css">
+    
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <img src="img/logo_spectrum.png" alt="Logo" class="header-logo">
+                <div class="header-text">
+                    <h1>SPECTRUM</h1>
+                    <p>Connect & Thrive</p>
+                </div>
+            </div>
+            <nav class="desktop-nav">
+                <a href="home.html" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">Notificações</a>
+                <a href="#" class="nav-link">Eventos</a>
+                <a href="#" class="nav-link">Perfil</a>
+                
+                <button id="theme-toggle" class="nav-theme-btn" aria-label="Alternar tema">
+                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div class="filtro-agenda">
+        <span class="filtro-mensagem">
+            Conecte-se com médicos especializados!
+        </span>
+
+
+
+        
+        <ul class="uno"> 
+            <li class="filtro-btn active" data-filtro="todos">Todos</li>
+            
+            <li class="dropdown-toggle" data-target="dropdown-especialidade">
+                Especialidade
+                <ul class="dropdown-menu" id="dropdown-especialidade">
+                    <li class="filtro-btn" data-filtro="neurologista">Neurologista</li>
+                    <li class="filtro-btn" data-filtro="psicologo">Psicóloga/o</li>
+                    <li class="filtro-btn" data-filtro="psiquiatra">Psiquiatra</li>
+                    <li class="filtro-btn" data-filtro="fonoaudiologo">Fonoaudiólogo(a)</li>
+                    <li class="filtro-btn" data-filtro="terapeuta-ocupacional">Terapeuta Ocupacional</li>
+                </ul>
+            </li>
+            
+            <li class="dropdown-toggle" data-target="dropdown-localizacao">
+                Localização
+                <ul class="dropdown-menu" id="dropdown-localizacao">
+                    <li class="filtro-btn" data-filtro="bh">Belo Horizonte</li>
+                    <li class="filtro-btn" data-filtro="contagem">Contagem</li>
+                    <li class="filtro-btn" data-filtro="betim">Betim</li>
+                </ul>
+            </li>
+    
+            <li class="dropdown-toggle" data-target="dropdown-convenio">
+                Convênio
+                <ul class="dropdown-menu" id="dropdown-convenio">
+                    <li class="filtro-btn" data-filtro="convenio-a">Saúde Total</li>
+                    <li class="filtro-btn" data-filtro="convenio-b">Pleno Saúde</li>
+                    <li class="filtro-btn" data-filtro="convenio-c">Vida Mais</li>
+                    <li class="filtro-btn" data-filtro="convenio-d">Bem Estar</li>
+                    <li class="filtro-btn" data-filtro="convenio-e">Cuidar Mais</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="medicos-container"> 
+
+        <div class="medicos neurologista contagem convenio-a">
+            <div class="fotinha">
+                <img src="img/logo_spectrum.png" alt="Foto da Doutora">
+            </div>
+            <div class="coluna">
+                <div class="detalhes-texto">
+                    <div class="nome">Drª. Ana Mendes</div>
+                    <div class="especialidade">Neurologista</div>
+                    <div class="crm">CRM: 20587</div>
+                    <div class="localiza">Rua Das Paineiras N°2000, Contagem -MG</div>
+                    <div class="convenio">Convênio: Saúde Total</div>
+                    <div class="avalia">★★★★★</div>
+                </div>
+                <button class="agendar">Agendar Consulta</button>
+                <div class="contato-info" style="display: none;">
+                    <div class="contato-detalhes">
+                        <p><strong>(31) 98765-4321</strong></p>
+                        <p><strong>ana.mendes@spectrum.com</strong></p>
+                    </div>
+                    <button class="fechar-contato">X</button>
+                </div>
+            </div>
+            <div class="info-medica">
+                <p>Especialista em diagnósticos de TEA e TDAH em crianças e adolescentes. Foco em neuroplasticidade e intervenções comportamentais baseadas em evidências.</p>
+            </div>
+        </div>
+    
+        <div class="medicos psiquiatra bh convenio-b">
+            <div class="fotinha">
+                <img src="img/logo_spectrum.png" alt="Foto do Doutor">
+            </div>
+            <div class="coluna">
+                <div class="detalhes-texto">
+                    <div class="nome">Dr. Ricardo Souza</div>
+                    <div class="especialidade">Psiquiatra</div>
+                    <div class="crm">CRM: 32910</div>
+                    <div class="localiza">Av. Afonso Pena, 1500, Belo Horizonte - MG</div>
+                    <div class="convenio">Convênio: Pleno Saúde</div>
+                    <div class="avalia">★★★★☆</div>
+                </div>
+                <button class="agendar">Agendar Consulta</button>
+                <div class="contato-info" style="display: none;">
+                    <div class="contato-detalhes">
+                        <p><strong>(31) 98765-4322</strong></p>
+                        <p><strong>ricardo.souza@spectrum.com</strong></p>
+                    </div>
+                    <button class="fechar-contato">X</button>
+                </div>
+            </div>
+            <div class="info-medica">
+                <p>Psiquiatria da Infância e Adolescência. Atua no manejo farmacológico e psicoterapêutico de comorbidades do neurodesenvolvimento, como ansiedade e TOC.</p>
+            </div>
+        </div>
+    
+        <div class="medicos psicologo betim convenio-c">
+            <div class="fotinha">
+                <img src="img/logo_spectrum.png" alt="Foto da Doutora">
+            </div>
+            <div class="coluna">
+                <div class="detalhes-texto">
+                    <div class="nome">Drª. Camila Reis</div>
+                    <div class="especialidade">Psicóloga</div>
+                    <div class="crp">CRP: 04/18790</div>
+                    <div class="localiza">Rua Inconfidência, 55, Betim - MG</div>
+                    <div class="convenio">Convênio: Vida Mais</div>
+                    <div class="avalia">★★★★★</div>
+                </div>
+                <button class="agendar">Agendar Consulta</button>
+                <div class="contato-info" style="display: none;">
+                    <div class="contato-detalhes">
+                        <p><strong>(31) 98765-4323</strong></p>
+                        <p><strong>camila.reis@spectrum.com</strong></p>
+                    </div>
+                    <button class="fechar-contato">X</button>
+                </div>
+            </div>
+            <div class="info-medica">
+                <p>Psicologia Cognitivo-Comportamental (TCC) aplicada ao TEA. Treinamento de habilidades sociais e regulação emocional para promover a inclusão escolar e social.</p>
+            </div>
+        </div>
+    
+        <div class="medicos terapeuta-ocupacional bh convenio-d">
+            <div class="fotinha">
+                <img src="img/logo_spectrum.png" alt="Foto da Doutora">
+            </div>
+            <div class="coluna">
+                <div class="detalhes-texto">
+                    <div class="nome">Drª. Luiza Tavares</div>
+                    <div class="especialidade">Terapeuta Ocupacional</div>
+                    <div class="crefito">CREFITO: 8009</div>
+                    <div class="localiza">Rua Piauí, 800, Belo Horizonte - MG</div>
+                    <div class="convenio">Convênio: Bem Estar</div>
+                    <div class="avalia">★★★★★</div>
+                </div>
+                <button class="agendar">Agendar Consulta</button>
+                <div class="contato-info" style="display: none;">
+                    <div class="contato-detalhes">
+                        <p><strong>(31) 98765-4324</strong></p>
+                        <p><strong>luiza.tavares@spectrum.com</strong></p>
+                    </div>
+                    <button class="fechar-contato">X</button>
+                </div>
+            </div>
+            <div class="info-medica">
+                <p>Especializada em Integração Sensorial de Ayres (ASI). Foco em estratégias para dificuldades de alimentação, vestuário e regulação sensorial em ambientes escolares.</p>
+            </div>
+        </div>
+    
+        <div class="medicos neurologista bh convenio-e">
+            <div class="fotinha">
+                <img src="img/logo_spectrum.png" alt="Foto do Doutor">
+            </div>
+            <div class="coluna">
+                <div class="detalhes-texto">
+                    <div class="nome">Dr. Felipe Costa</div>
+                    <div class="especialidade">Neurologista</div>
+                    <div class="crm">CRM: 41002</div>
+                    <div class="localiza">Rua Levindo Lopes, 100, Belo Horizonte - MG</div>
+                    <div class="convenio">Convênio: Cuidar Mais</div>
+                    <div class="avalia">★★★★★</div>
+                </div>
+                <button class="agendar">Agendar Consulta</button>
+                <div class="contato-info" style="display: none;">
+                    <div class="contato-detalhes">
+                        <p><strong>(31) 98765-4325</strong></p>
+                        <p><strong>felipe.costa@spectrum.com</strong></p>
+                    </div>
+                    <button class="fechar-contato">X</button>
+                </div>
+            </div>
+            <div class="info-medica">
+                <p>Foco em epilepsia e distúrbios do sono em pacientes com TEA. Utiliza abordagem integrativa, trabalhando em conjunto com a equipe de terapia ocupacional.</p>
+            </div>
+        </div>
+    
+        <div class="medicos psicologo contagem convenio-a">
+            <div class="fotinha">
+                <img src="img/logo_spectrum.png" alt="Foto do Doutor">
+            </div>
+            <div class="coluna">
+                <div class="detalhes-texto">
+                    <div class="nome">Dr. Pedro Santos</div>
+                    <div class="especialidade">Psicólogo</div>
+                    <div class="crp">CRP: 04/22511</div>
+                    <div class="localiza">Av. João César de Oliveira, 4500, Contagem - MG</div>
+                    <div class="convenio">Convênio: Saúde Total</div>
+                    <div class="avalia">★★★★☆</div>
+                </div>
+                <button class="agendar">Agendar Consulta</button>
+                <div class="contato-info" style="display: none;">
+                    <div class="contato-detalhes">
+                        <p><strong>(31) 98765-4326</strong></p>
+                        <p><strong>pedro.santos@spectrum.com</strong></p>
+                    </div>
+                    <button class="fechar-contato">X</button>
+                </div>
+            </div>
+            <div class="info-medica">
+                <p>Especialista em Análise do Comportamento Aplicada (ABA). Oferece intervenção intensiva e consultoria parental para o desenvolvimento da comunicação e autonomia.</p>
+            </div>
+        </div>
+    
+        <div class="medicos psiquiatra betim convenio-b">
+            <div class="fotinha">
+                <img src="img/logo_spectrum.png" alt="Foto da Doutora">
+            </div>
+            <div class="coluna">
+                <div class="detalhes-texto">
+                    <div class="nome">Drª. Laura Pires</div>
+                    <div class="especialidade">Psiquiatra</div>
+                    <div class="crm">CRM: 50134</div>
+                    <div class="localiza">Av. Governador Valadares, 30, Betim - MG</div>
+                    <div class="convenio">Convênio: Pleno Saúde</div>
+                    <div class="avalia">★★★★★</div>
+                </div>
+                <button class="agendar">Agendar Consulta</button>
+                <div class="contato-info" style="display: none;">
+                    <div class="contato-detalhes">
+                        <p><strong>(31) 98765-4327</strong></p>
+                        <p><strong>laura.pires@spectrum.com</strong></p>
+                    </div>
+                    <button class="fechar-contato">X</button>
+                </div>
+            </div>
+            <div class="info-medica">
+                <p>Atendimento psiquiátrico para adultos no espectro. Gestão de condições de saúde mental concomitantes, com foco em qualidade de vida e inserção profissional.</p>
+            </div>
+        </div>
+    
+        <div class="medicos fonoaudiologo contagem convenio-c">
+            <div class="fotinha">
+                <img src="img/logo_spectrum.png" alt="Foto da Doutora">
+            </div>
+            <div class="coluna">
+                <div class="detalhes-texto">
+                    <div class="nome">Drª. Diana Silva</div>
+                    <div class="especialidade">Fonoaudióloga</div>
+                    <div class="crfa">CRFA: 9015</div>
+                    <div class="localiza">Rua Das Indústrias, 120, Contagem - MG</div>
+                    <div class="convenio">Convênio: Vida Mais</div>
+                    <div class="avalia">★★★★★</div>
+                </div>
+                <button class="agendar">Agendar Consulta</button>
+                <div class="contato-info" style="display: none;">
+                    <div class="contato-detalhes">
+                        <p><strong>(31) 98765-4328</strong></p>
+                        <p><strong>diana.silva@spectrum.com</strong></p>
+                    </div>
+                    <button class="fechar-contato">X</button>
+                </div>
+            </div>
+            <div class="info-medica">
+                <p>Especialista em Comunicação Alternativa e Aumentativa (CAA). Foco em PECS e dispositivos de comunicação para indivíduos com dificuldades na fala funcional.</p>
+            </div>
+        </div>
+        
+        <div class="medicos neurologista bh convenio-d">
+            <div class="fotinha">
+                <img src="img/logo_spectrum.png" alt="Foto do Doutor">
+            </div>
+            <div class="coluna">
+                <div class="detalhes-texto">
+                    <div class="nome">Dr. Gustavo Lima</div>
+                    <div class="especialidade">Neurologista</div>
+                    <div class="crm">CRM: 55678</div>
+                    <div class="localiza">Rua Rio Grande do Sul, 700, Belo Horizonte - MG</div>
+                    <div class="convenio">Convênio: Bem Estar</div>
+                    <div class="avalia">★★★★☆</div>
+                </div>
+                <button class="agendar">Agendar Consulta</button>
+                <div class="contato-info" style="display: none;">
+                    <div class="contato-detalhes">
+                        <p><strong>(31) 98765-4329</strong></p>
+                        <p><strong>gustavo.lima@spectrum.com</strong></p>
+                    </div>
+                    <button class="fechar-contato">X</button>
+                </div>
+            </div>
+            <div class="info-medica">
+                <p>Neurofisiologia clínica e mapeamento cerebral. Dedicado ao estudo da lateralidade e da comunicação não verbal em indivíduos com perfis sensoriais atípicos.</p>
+            </div>
+        </div>
+    
+        <div class="medicos psicologo bh convenio-e">
+            <div class="fotinha">
+                <img src="img/logo_spectrum.png" alt="Foto da Doutora">
+            </div>
+            <div class="coluna">
+                <div class="detalhes-texto">
+                    <div class="nome">Drª. Marina Oliveira</div>
+                    <div class="especialidade">Psicóloga</div>
+                    <div class="crp">CRP: 04/30456</div>
+                    <div class="localiza">Rua Alagoas, 1400, Belo Horizonte - MG</div>
+                    <div class="convenio">Convênio: Cuidar Mais</div>
+                    <div class="avalia">★★★★★</div>
+                </div>
+                <button class="agendar">Agendar Consulta</button>
+                <div class="contato-info" style="display: none;">
+                    <div class="contato-detalhes">
+                        <p><strong>(31) 98765-4330</strong></p>
+                        <p><strong>marina.oliveira@spectrum.com</strong></p>
+                    </div>
+                    <button class="fechar-contato">X</button>
+                </div>
+            </div>
+            <div class="info-medica">
+                <p>Psicoterapia para adolescentes e adultos autistas (nível 1 e 2). Especialista em questões de identidade, *masking* e desenvolvimento de estratégias de autoaceitação.</p>
+            </div>
+        </div>
+        
+        <div class="medicos fonoaudiologo bh convenio-a">
+            <div class="fotinha">
+                <img src="img/logo_spectrum.png" alt="Foto do Doutor">
+            </div>
+            <div class="coluna">
+                <div class="detalhes-texto">
+                    <div class="nome">Dr. Marcos Viana</div>
+                    <div class="especialidade">Fonoaudiólogo</div>
+                    <div class="crfa">CRFA: 11250</div>
+                    <div class="localiza">Av. Cristóvão Colombo, 200, Belo Horizonte - MG</div>
+                    <div class="convenio">Convênio: Saúde Total</div>
+                    <div class="avalia">★★★★☆</div>
+                </div>
+                <button class="agendar">Agendar Consulta</button>
+                <div class="contato-info" style="display: none;">
+                    <div class="contato-detalhes">
+                        <p><strong>(31) 98765-4331</strong></p>
+                        <p><strong>marcos.viana@spectrum.com</strong></p>
+                    </div>
+                    <button class="fechar-contato">X</button>
+                </div>
+            </div>
+            <div class="info-medica">
+                <p>Acompanhamento de desenvolvimento de linguagem, atrasos e dificuldades de articulação em crianças com TEA. Usa métodos lúdicos e terapias baseadas em interesse.</p>
+            </div>
+        </div>
+    
+        <div class="medicos neurologista contagem convenio-b">
+            <div class="fotinha">
+                <img src="img/logo_spectrum.png" alt="Foto do Doutor">
+            </div>
+            <div class="coluna">
+                <div class="detalhes-texto">
+                    <div class="nome">Dr. Hugo Ferreira</div>
+                    <div class="especialidade">Neurologista</div>
+                    <div class="crm">CRM: 61990</div>
+                    <div class="localiza">Av. Babita Camargos, 1800, Contagem - MG</div>
+                    <div class="convenio">Convênio: Pleno Saúde</div>
+                    <div class="avalia">★★★★☆</div>
+                </div>
+                <button class="agendar">Agendar Consulta</button>
+                <div class="contato-info" style="display: none;">
+                    <div class="contato-detalhes">
+                        <p><strong>(31) 98765-4332</strong></p>
+                        <p><strong>hugo.ferreira@spectrum.com</strong></p>
+                    </div>
+                    <button class="fechar-contato">X</button>
+                </div>
+            </div>
+            <div class="info-medica">
+                <p>Avaliação neurológica completa e acompanhamento do desenvolvimento motor e sensorial. Forte parceria com fonoaudiólogos no tratamento de apraxia de fala.</p>
+            </div>
+        </div>
+        
+        <div class="medicos terapeuta-ocupacional betim convenio-c">
+            <div class="fotinha">
+                <img src="img/logo_spectrum.png" alt="Foto da Doutora">
+            </div>
+            <div class="coluna">
+                <div class="detalhes-texto">
+                    <div class="nome">Drª. Clara Mendes</div>
+                    <div class="especialidade">Terapeuta Ocupacional</div>
+                    <div class="crefito">CREFITO: 9542</div>
+                    <div class="localiza">Rua do Rosário, 350, Betim - MG</div>
+                    <div class="convenio">Convênio: Vida Mais</div>
+                    <div class="avalia">★★★★★</div>
+                </div>
+                <button class="agendar">Agendar Consulta</button>
+                <div class="contato-info" style="display: none;">
+                    <div class="contato-detalhes">
+                        <p><strong>(31) 98765-4333</strong></p>
+                        <p><strong>clara.mendes@spectrum.com</strong></p>
+                    </div>
+                    <button class="fechar-contato">X</button>
+                </div>
+            </div>
+            <div class="info-medica">
+                <p>Foco em habilidades de vida diária (AVDs) e coordenação motora fina. Implementa estratégias de organização e planejamento para rotinas domésticas e escolares.</p>
+            </div>
+        </div>
+    
+        <div class="medicos psiquiatra bh convenio-d">
+            <div class="fotinha">
+                <img src="img/logo_spectrum.png" alt="Foto da Doutora">
+            </div>
+            <div class="coluna">
+                <div class="detalhes-texto">
+                    <div class="nome">Drª. Patrícia Gomes</div>
+                    <div class="especialidade">Psiquiatra</div>
+                    <div class="crm">CRM: 68112</div>
+                    <div class="localiza">Rua Grão Pará, 50, Belo Horizonte - MG</div>
+                    <div class="convenio">Convênio: Bem Estar</div>
+                    <div class="avalia">★★★★★</div>
+                </div>
+                <button class="agendar">Agendar Consulta</button>
+                <div class="contato-info" style="display: none;">
+                    <div class="contato-detalhes">
+                        <p><strong>(31) 98765-4334</strong></p>
+                        <p><strong>patricia.gomes@spectrum.com</strong></p>
+                    </div>
+                    <button class="fechar-contato"> X </button>
+                </div>
+            </div>
+            <div class="info-medica">
+                <p>Foco em saúde mental materna e suporte psiquiátrico a pais de crianças no espectro. Atua também na estabilização de crises e dificuldades comportamentais.</p>
+            </div>
+        </div>
+    
+    </div> 
+
+<script src="scripts.js"></script>
+</body>
+</html>
