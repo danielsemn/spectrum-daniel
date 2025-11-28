@@ -478,10 +478,10 @@ OS CARDS DOS MÉDICOS
     font-size: 1.1rem;
     color: #1a73e8; 
     margin-bottom: 5px;
-    width: 20vh;
+    width: 30vh;
 }
 
-.especialidade, .crfa, .crefito, .crp, .convenio, .crm, .localiza, .contato-detalhes {
+.especialidade, .crfa, .crefito, .crp, .convenio, .crm, .localiza {
     width: 20vh;
     font-size: 0.9rem;
     color: #666;
@@ -647,39 +647,45 @@ body.dark-mode .dropdown-menu li.filtro-btn:hover {
     background-color: #3e3e3e;
 }
 
-/* --- NOVO ESTILO PARA BOTÃO FECHAR (X) --- */
-.fechar-contato {
-    /* Torna o fundo e borda transparentes */
-    background: transparent; 
-    border: none; 
-    
-    /* Estilo do "X" */
-    font-size: 1rem;
-    font-weight: bold;
-    color: #cc0000; /* Cor vermelha discreta */
-    cursor: pointer;
-    
-    /* Posição e Click Area */
-    padding: 5px; /* Aumenta a área clicável sem aumentar o 'X' visualmente */
-    width: auto; /* Permite que o conteúdo defina a largura */
- margin-bottom: 4.5vh;
- margin-left: 3vh;
-    line-height: 1; 
-    align-self: flex-end; /* Mantém alinhado no canto direito */
-}
-
-.fechar-contato:hover {
-    color: #ff0000; /* Fica mais vermelho ao passar o mouse */
-}
-
 /* Ajuste Dark Mode */
 body.dark-mode .fechar-contato {
     color: #ff5555;
     background: transparent;
 }
 
+/* --- Novo estilo para o container que aparece --- */
+
+
+/* Ajuste nos textos (Telefone e Email) */
 .contato-detalhes {
-    width: 15vh;
-    font-size: 0.9rem;
-    color: #666;
+    margin-top: 1.1vh;
+    font-size: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Espaço entre as linhas de texto */
+    text-align: left;
+    width: 12vh
+}
+
+.contato-detalhes p {
+    margin: 0; /* Remove margens padrão do parágrafo */
+
+}
+
+.contato-info {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between; 
+}
+
+.fechar-contato {
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #cc0000;
+    cursor: pointer;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-bottom: 1.2vh;
 }
