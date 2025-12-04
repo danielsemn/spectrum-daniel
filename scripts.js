@@ -1,111 +1,112 @@
-
-    // --- Lógica do Modo Escuro (Mantida) ---
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- Lógica do Modo Escuro ---
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     const sunIcon = document.getElementById('sun-icon');
     const moonIcon = document.getElementById('moon-icon');
 
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-mode');
-        if (body.classList.contains('dark-mode')) {
-            sunIcon.style.display = 'block';
-            moonIcon.style.display = 'none';
-        } else {
-            sunIcon.style.display = 'none';
-            moonIcon.style.display = 'block';
-        }
-    });
+    // O "if" abaixo previne que o site quebre se o botão não existir
+    if (themeToggle && sunIcon && moonIcon) {
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            } else {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            }
+        });
+    }
 
-    // ... (Mantenha aqui a Lógica do Modo Escuro) ...
-
-    // --- Lógica do Filtro e Dropdown (Nova) ---
+    // --- Lógica do Filtro e Dropdown ---
     const filtroBotoes = document.querySelectorAll('.filtro-btn');
     const cartoesMedicos = document.querySelectorAll('.medicos');
     const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
     const todosBotao = document.querySelector('.filtro-btn[data-filtro="todos"]');
 
-
-    // ----------------------------------------------------
-    // FUNÇÃO PRINCIPAL PARA ABRIR/FECHAR DROPDOWN
-    // ----------------------------------------------------
+    // 1. Abrir/Fechar Dropdown
     dropdownToggles.forEach(toggle => {
         toggle.addEventListener('click', (e) => {
-            // Previne que o clique no LI pai acione o filtro do LI filho
-            if (e.target.tagName !== 'LI') return;
-
-            // Fecha todos os outros dropdowns
+            // Impede a propagação se clicar em elementos internos indesejados, mas permite o LI
+            e.stopPropagation(); 
+            
+            // Fecha outros dropdowns abertos
             dropdownToggles.forEach(otherToggle => {
                 if (otherToggle !== toggle) {
                     otherToggle.classList.remove('open');
                 }
             });
 
-            // Alterna a classe 'open' no dropdown clicado
             toggle.classList.toggle('open');
         });
     });
 
-    // ----------------------------------------------------
-    // FUNÇÃO PRINCIPAL DE FILTRAGEM DE CARTÕES
-    // ----------------------------------------------------
+    // Fechar dropdown se clicar fora dele
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown-toggle')) {
+            dropdownToggles.forEach(toggle => toggle.classList.remove('open'));
+        }
+    });
+
+    // 2. Filtragem de Cartões
     filtroBotoes.forEach(botao => {
-        botao.addEventListener('click', () => {
-            
+        botao.addEventListener('click', (e) => {
+            e.stopPropagation(); // Evita conflito com o fechar do dropdown
+
             const filtroValor = botao.getAttribute('data-filtro');
 
-            // 1. Remove a classe 'active' de TODOS os botões de filtro (incluindo os dentro do dropdown)
+            // Remove active de todos
             filtroBotoes.forEach(btn => btn.classList.remove('active'));
-            
-            // 2. Adiciona a classe 'active' ao botão clicado
+            // Adiciona active no clicado
             botao.classList.add('active');
             
-            // 3. Fecha todos os dropdowns após a seleção de um item
+            // Fecha os dropdowns
             dropdownToggles.forEach(toggle => toggle.classList.remove('open'));
 
-            // 4. Executa a filtragem
+            // Lógica de esconder/mostrar
             cartoesMedicos.forEach(cartao => {
+                // Reseta o display para o padrão (flex) antes de testar
                 cartao.style.display = 'flex'; 
 
-                if (filtroValor === 'todos' || filtroValor === 'convenio') {
-                    // O filtro 'convenio' ainda não tem funcionalidade, mas garantimos que nada seja escondido
+                if (filtroValor === 'todos') {
                     cartao.style.display = 'flex';
-                } else if (!cartao.classList.contains(filtroValor)) {
-                    cartao.style.display = 'none';
+                } else {
+                    // Se o cartão NÃO tem a classe do filtro, esconde
+                    if (!cartao.classList.contains(filtroValor)) {
+                        cartao.style.display = 'none';
+                    }
                 }
             });
         });
     });
-    
-    // Configura o filtro inicial (para mostrar todos ao carregar a página)
+
+    // Inicializa mostrando todos
     if(todosBotao) {
         todosBotao.click();
     }
 
-    // --- Lógica do Botão Agendar/Contato (Nova) ---
+    // --- Lógica do Botão Agendar/Contato ---
     document.querySelectorAll('.agendar').forEach(botaoAgendar => {
         botaoAgendar.addEventListener('click', () => {
             const coluna = botaoAgendar.closest('.coluna');
             const contatoInfo = coluna.querySelector('.contato-info');
             
-            // Esconde o botão "Agendar"
             botaoAgendar.style.display = 'none';
-            
-            // Mostra a área de informações de contato
             contatoInfo.style.display = 'flex'; 
         });
     });
 
-    // Lógica para o botão "Fechar"
     document.querySelectorAll('.fechar-contato').forEach(botaoFechar => {
         botaoFechar.addEventListener('click', () => {
             const contatoInfo = botaoFechar.closest('.contato-info');
             const coluna = contatoInfo.closest('.coluna');
             const botaoAgendar = coluna.querySelector('.agendar');
 
-            // Esconde a área de informações de contato
             contatoInfo.style.display = 'none';
-            
-            // Mostra o botão "Agendar Consulta"
             botaoAgendar.style.display = 'block'; 
         });
     });
+
+});
